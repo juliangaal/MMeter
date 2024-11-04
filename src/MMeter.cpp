@@ -280,7 +280,6 @@ FuncProfiler::~FuncProfiler()
     auto endTime = std::chrono::system_clock::now();
     mBranchPtr->mDuration += endTime - mStartTime;
     mBranchPtr->mCount++;
-    auto parentBranchPtr = mTreePtr->stack()[mTreePtr->stack().size() - 2];
     mTreePtr->stackPop();
     mChoresDuration += std::chrono::system_clock::now() - endTime;
     mBranchPtr->mChoreDuration += mChoresDuration;
